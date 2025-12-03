@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIVA - Academia de Inteligencia y Valor Avanzado</title>
-    <meta name="description" content="Evolucionamos de Talleres EVA. Próximamente la mejor formación en Inteligencia Artificial.">
+    <title>AIVA - Academia de Inteligencia Artificial</title>
+    <meta name="description" content="Domina la Inteligencia Artificial. Cursos prácticos y mentoría experta para transformar tu futuro profesional.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
           theme: {
             extend: {
+              fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+              },
               colors: {
                 aiva: {
-                    blue: '#005bea', // Azul profundo
-                    teal: '#00c6fb', // Turquesa brillante
+                    dark: '#0f172a',    // Fondo oscuro principal
+                    blue: '#005bea',    // Azul corporativo
+                    teal: '#00c6fb',    // Turquesa brillante (acentos)
+                    surface: '#1e293b'  // Color para tarjetas/secciones
                 }
               }
             }
@@ -21,46 +28,112 @@
         }
       </script>
       <style>
-        /* Estilo para el texto con gradiente (simulando el logo por ahora) */
+        /* Efectos especiales */
         .gradient-text {
-            background: linear-gradient(to right, #005bea, #00c6fb);
+            background: linear-gradient(to right, #00c6fb, #005bea);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .btn-primary {
+            background: linear-gradient(to right, #005bea, #00c6fb);
+            transition: transform 0.2s;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            opacity: 0.95;
+        }
       </style>
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen font-sans">
+<body class="bg-aiva-dark text-white font-sans antialiased selection:bg-aiva-teal selection:text-aiva-dark">
 
-    <nav class="w-full py-6 px-8 flex justify-center md:justify-start">
-        <div class="text-3xl font-black tracking-wider gradient-text">
-            AIVA
+    <nav class="fixed w-full z-50 bg-aiva-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <svg class="h-8 w-8 text-aiva-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 19V5M5 12l7-7 7 7"/>
+                        <path d="M12 5l0 0"/> </svg>
+                    <span class="font-bold text-2xl tracking-tight">AIVA</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#" class="text-gray-300 hover:text-aiva-teal transition-colors text-sm font-medium">Inicio</a>
+                    <a href="#cursos" class="text-gray-300 hover:text-aiva-teal transition-colors text-sm font-medium">Cursos</a>
+                    <a href="#mentoria" class="text-gray-300 hover:text-aiva-teal transition-colors text-sm font-medium">Mentoría</a>
+                    <a href="#nosotros" class="text-gray-300 hover:text-aiva-teal transition-colors text-sm font-medium">Nosotros</a>
+                    
+                    <a href="#" class="border border-aiva-teal text-aiva-teal hover:bg-aiva-teal hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all">
+                        Campus Virtual
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <main class="flex-grow flex items-center justify-center px-4">
-        <div class="max-w-3xl text-center">
-            <div class="mb-8 flex justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-aiva-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full z-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-aiva-blue/20 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-aiva-teal/10 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-aiva-teal text-xs font-semibold uppercase tracking-wide mb-6">
+                <span class="w-2 h-2 rounded-full bg-aiva-teal animate-pulse"></span>
+                Evolución de Talleres EVA
             </div>
             
-            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
-                El futuro de la educación en <span class="gradient-text">IA</span> está llegando.
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Domina la <br>
+                <span class="gradient-text">Inteligencia Artificial</span>
             </h1>
             
-            <p class="text-xl text-gray-600 mb-10 leading-relaxed">
-                Evolucionamos de <strong>Talleres EVA</strong> para ofrecerte la mejor formación avanzada en Inteligencia Artificial.
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400 mb-10">
+                Deja de ver la IA como el futuro y empieza a usarla hoy. Cursos prácticos, mentoría personalizada y certificación para potenciar tu carrera.
             </p>
-
-            <div class="inline-block bg-white border-2 border-aiva-blue rounded-full px-8 py-3 text-lg font-semibold text-aiva-blue shadow-sm">
-                ¡Espéranos!
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#cursos" class="btn-primary px-8 py-4 rounded-full text-white font-bold text-lg shadow-lg shadow-aiva-blue/25">
+                    Ver Cursos Disponibles
+                </a>
+                <a href="#" class="px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white font-semibold text-lg transition-all">
+                    Hablemos por WhatsApp
+                </a>
             </div>
         </div>
-    </main>
+    </header>
 
-    <footer class="py-6 text-center text-gray-500 text-sm">
-        © 2024 AIVA. Evolucionando la educación.
+    <section class="py-20 bg-aiva-surface/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-aiva-teal/30 transition-colors">
+                    <div class="w-12 h-12 bg-aiva-blue/20 rounded-lg flex items-center justify-center mb-4 text-aiva-teal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Aprendizaje Práctico</h3>
+                    <p class="text-gray-400 text-sm">Olvídate de la teoría aburrida. Aquí aprendes creando proyectos reales con herramientas de IA desde el día 1.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-aiva-teal/30 transition-colors">
+                    <div class="w-12 h-12 bg-aiva-blue/20 rounded-lg flex items-center justify-center mb-4 text-aiva-teal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Mentoría Híbrida</h3>
+                    <p class="text-gray-400 text-sm">Combina la flexibilidad de los videos grabados con el soporte en vivo de un profesor experto.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-aiva-teal/30 transition-colors">
+                    <div class="w-12 h-12 bg-aiva-blue/20 rounded-lg flex items-center justify-center mb-4 text-aiva-teal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Certificación AIVA</h3>
+                    <p class="text-gray-400 text-sm">Recibe un certificado de finalización al completar tus proyectos para validar tus nuevas habilidades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-aiva-dark border-t border-white/10 py-12 text-center">
+        <p class="text-gray-500 text-sm">© 2024 AIVA Academy. Todos los derechos reservados.</p>
     </footer>
 
 </body>
