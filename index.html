@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIVA - Academia de Inteligencia Artificial</title>
-    <meta name="description" content="Domina la Inteligencia Artificial. Cursos prácticos y mentoría experta para transformar tu futuro profesional y el de tus hijos.">
+    <meta name="description" content="Domina la Inteligencia Artificial. Cursos prácticos y mentoría experta para niños y adultos.">
     
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="AIVA Academy | Cursos de IA y Verano Tech 2026">
-    <meta property="og:description" content="¿Tu hijo jugando o creando? Inscríbelo en los talleres de Cuentos con IA y Videojuegos con Scratch. ¡Vacantes limitadas para Enero!">
+    <meta property="og:title" content="AIVA Academy | Verano Tech 2026">
+    <meta property="og:description" content="Talleres de Verano: Cuentos con IA y Videojuegos con Scratch. ¡Inscripciones Abiertas para Enero!">
     <meta property="og:image" content="portada-social.jpg">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="portada-social.jpg">
-
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -24,369 +20,207 @@
         tailwind.config = {
           theme: {
             extend: {
-              fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-              },
+              fontFamily: { sans: ['Inter', 'sans-serif'] },
               colors: {
-                aiva: {
-                    dark: '#0f172a',    // Fondo oscuro principal
-                    blue: '#005bea',    // Azul corporativo
-                    teal: '#00c6fb',    // Turquesa brillante (acentos)
-                    surface: '#1e293b'  // Color para tarjetas/secciones
-                }
+                aiva: { dark: '#0f172a', blue: '#005bea', teal: '#00c6fb', surface: '#1e293b' }
               }
             }
           }
         }
-      </script>
-      <style>
-        /* Efectos especiales */
-        .gradient-text {
-            background: linear-gradient(to right, #00c6fb, #005bea);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .btn-primary {
-            background: linear-gradient(to right, #005bea, #00c6fb);
-            transition: transform 0.2s;
-        }
-        .btn-primary:hover {
-            transform: scale(1.05);
-            opacity: 0.95;
-        }
-      </style>
+    </script>
 </head>
 <body class="bg-aiva-dark text-white font-sans antialiased selection:bg-aiva-teal selection:text-aiva-dark">
 
-    <nav class="fixed w-full z-50 bg-aiva-dark/90 backdrop-blur-md border-b border-white/10">
+    <nav class="fixed w-full z-50 bg-aiva-dark/95 backdrop-blur-md border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center cursor-pointer">
-                    <img src="logo-aiva.png" alt="Logo AIVA Academy" class="h-12 w-auto">
+                    <img src="logo-aiva.png" alt="Logo AIVA" class="h-10 w-auto">
                 </div>
                 
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#" class="text-gray-300 hover:text-aiva-teal transition-colors text-sm font-medium">Inicio</a>
                     <a href="#cursos" class="text-gray-300 hover:text-aiva-teal transition-colors text-sm font-medium">Cursos</a>
-                    <a href="#apps" class="text-gray-300 hover:text-aiva-teal transition-colors text-sm font-medium">Apps</a>
+                    <a href="#recursos" class="text-gray-300 hover:text-aiva-teal transition-colors text-sm font-medium">Gratis</a>
                     <a href="#nosotros" class="text-gray-300 hover:text-aiva-teal transition-colors text-sm font-medium">Nosotros</a>
-                    
-                    <a href="#" class="border border-aiva-teal text-aiva-teal hover:bg-aiva-teal hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-all">
-                        Campus Virtual
-                    </a>
+                    <a href="#apps" class="border border-aiva-teal text-aiva-teal px-4 py-2 rounded-full text-sm font-semibold hover:bg-aiva-teal hover:text-white transition-all">Apps</a>
                 </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-aiva-surface border-b border-white/10 shadow-xl">
+            <div class="px-4 pt-4 pb-6 space-y-3 text-center">
+                <a href="#" class="block px-3 py-2 text-base font-medium text-white hover:text-aiva-teal bg-white/5 rounded-lg">Inicio</a>
+                <a href="#cursos" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-aiva-teal hover:bg-white/5 rounded-lg">Cursos</a>
+                <a href="#recursos" class="block px-3 py-2 text-base font-medium text-yellow-400 hover:text-white hover:bg-white/5 rounded-lg">🎁 Regalo PDF</a>
+                <a href="#nosotros" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-aiva-teal hover:bg-white/5 rounded-lg">Nosotros</a>
+                <a href="#apps" class="block px-3 py-2 text-base font-bold text-aiva-dark bg-aiva-teal rounded-lg">Mis Apps</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full z-0">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-aiva-blue/20 rounded-full blur-[100px]"></div>
-            <div class="absolute bottom-10 right-10 w-96 h-96 bg-aiva-teal/10 rounded-full blur-[100px]"></div>
+    <header class="relative pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden text-center px-4">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 opacity-40">
+            <div class="absolute top-20 left-10 w-60 h-60 bg-aiva-blue rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-10 right-10 w-60 h-60 bg-aiva-teal rounded-full blur-[100px]"></div>
         </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-aiva-teal text-xs font-semibold uppercase tracking-wide mb-6">
-                <span class="w-2 h-2 rounded-full bg-aiva-teal animate-pulse"></span>
-                Evolución de Talleres EVA
-            </div>
-            
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-                Domina la <br>
-                <span class="gradient-text">Inteligencia Artificial</span>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <span class="text-aiva-teal font-bold tracking-wider text-sm uppercase mb-4 block">Evolución de Talleres EVA</span>
+            <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Domina la <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-aiva-teal to-aiva-blue">Inteligencia Artificial</span>
             </h1>
-            
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400 mb-10">
-                Deja de ver la IA como el futuro y empieza a usarla hoy. Cursos prácticos, mentoría personalizada y certificación para potenciar tu carrera.
+            <p class="text-gray-400 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                Cursos prácticos para transformar tu futuro profesional y potenciar la creatividad de tus hijos.
             </p>
-            
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#cursos" class="btn-primary px-8 py-4 rounded-full text-white font-bold text-lg shadow-lg shadow-aiva-blue/25 flex items-center justify-center">
-                    Ver Cursos Disponibles
-                </a>
-                
-                <a href="https://wa.me/51952225123?text=Hola,%20quisiera%20más%20información%20sobre%20AIVA" target="_blank" class="px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-[#25D366] hover:border-[#25D366] hover:text-white text-white font-semibold text-lg transition-all flex items-center justify-center gap-2 group">
-                    <svg class="w-6 h-6 fill-current text-[#25D366] group-hover:text-white transition-colors" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                    </svg>
-                    Hablemos por WhatsApp
+                <a href="#cursos" class="px-8 py-4 rounded-full bg-gradient-to-r from-aiva-blue to-aiva-teal font-bold text-lg shadow-lg hover:scale-105 transition-transform">Ver Cursos</a>
+                <a href="https://wa.me/51952225123" target="_blank" class="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 font-semibold flex items-center justify-center gap-2">
+                    <span>💬</span> WhatsApp
                 </a>
             </div>
         </div>
     </header>
 
-    <section class="py-20 bg-aiva-surface/50 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-aiva-teal/30 transition-colors">
-                    <div class="w-12 h-12 bg-aiva-blue/20 rounded-lg flex items-center justify-center mb-4 text-aiva-teal">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Aprendizaje Práctico</h3>
-                    <p class="text-gray-400 text-sm">Olvídate de la teoría aburrida. Aquí aprendes creando proyectos reales con herramientas de IA desde el día 1.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-aiva-teal/30 transition-colors">
-                    <div class="w-12 h-12 bg-aiva-blue/20 rounded-lg flex items-center justify-center mb-4 text-aiva-teal">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Mentoría Híbrida</h3>
-                    <p class="text-gray-400 text-sm">Combina la flexibilidad de los videos grabados con el soporte en vivo de un profesor experto.</p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-aiva-teal/30 transition-colors">
-                    <div class="w-12 h-12 bg-aiva-blue/20 rounded-lg flex items-center justify-center mb-4 text-aiva-teal">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Certificación AIVA</h3>
-                    <p class="text-gray-400 text-sm">Recibe un certificado de finalización al completar tus proyectos para validar tus nuevas habilidades.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="cursos" class="py-24 bg-aiva-dark relative">
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-aiva-blue/10 rounded-full blur-3xl"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">
-                    Nuestros <span class="text-aiva-teal">Programas de Formación</span>
-                </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    Rutas de aprendizaje diseñadas para llevarte de cero a experto, con la metodología práctica de AIVA.
-                </p>
-            </div>
-
+    <section id="cursos" class="py-20 bg-aiva-dark relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Nuestros <span class="text-aiva-teal">Programas</span></h2>
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <div class="group bg-aiva-surface border border-white/10 rounded-2xl overflow-hidden hover:border-aiva-teal/50 transition-all duration-300 hover:shadow-2xl hover:shadow-aiva-teal/10 flex flex-col">
-                    <div class="h-48 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-aiva-blue/20 group-hover:bg-aiva-blue/10 transition-colors"></div>
-                        <div class="absolute top-4 left-4 bg-aiva-teal text-aiva-dark text-xs font-bold px-3 py-1 rounded-full">
-                            Bestseller
-                        </div>
-                        <div class="absolute inset-0 flex items-center justify-center text-6xl">🚀</div>
+                <div class="bg-aiva-surface border border-white/10 rounded-2xl overflow-hidden hover:border-aiva-teal/50 transition-all p-8 flex flex-col">
+                    <div class="mb-4 text-4xl">🚀</div>
+                    <h3 class="text-xl font-bold mb-2">IA Productiva</h3>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow">Domina ChatGPT, Claude y Copilot. Automatiza tareas y escribe mejor.</p>
+                    <div class="flex justify-between items-center border-t border-white/10 pt-4">
+                        <span class="text-2xl font-bold">S/ 97</span>
+                        <a href="https://forms.gle/kWtwRb5QgAp53HDw6" target="_blank" class="px-4 py-2 bg-white/10 rounded-lg hover:bg-aiva-blue text-sm font-bold transition-colors">Inscribirse</a>
                     </div>
-                    
-                    <div class="p-8 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold mb-2 group-hover:text-aiva-teal transition-colors">Adiós al Bloqueo: IA Productiva</h3>
-                        <p class="text-gray-400 text-sm mb-6 flex-grow">
-                            Domina las principales IAs: <strong>ChatGPT, Claude, Grok, Qwen y Copilot</strong>. Escribe correos, informes y planifica clases en segundos.
-                        </p>
+                </div>
+
+                <div class="bg-aiva-surface border-2 border-yellow-400/50 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-yellow-400/20 transition-all relative">
+                    <div class="bg-yellow-400 text-aiva-dark text-xs font-bold text-center py-1">INICIO: 5 DE ENERO 2026</div>
+                    <div class="p-8 flex flex-col h-full">
+                        <div class="mb-2 text-5xl text-center">🧒💻</div>
+                        <h3 class="text-2xl font-bold text-center mb-2 text-white">AIVA Kids Verano</h3>
+                        <p class="text-yellow-400 text-center text-sm font-bold mb-4">¡Dos Talleres Disponibles!</p>
                         
-                        <div class="border-t border-white/10 pt-6 mt-auto">
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-gray-400 text-sm line-through">S/ 197</span>
-                                <span class="text-2xl font-bold text-white">S/ 97</span>
+                        <div class="space-y-3 mb-6">
+                            <div class="bg-white/5 p-2 rounded border border-white/10">
+                                <span class="text-aiva-teal font-bold text-xs block">3:00 PM</span>
+                                <span class="text-sm">🎨 Cuentos con IA</span>
                             </div>
-                            <a href="https://forms.gle/u4gRhrk9efmK5uHp6" target="_blank" class="block w-full py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-aiva-blue hover:border-aiva-blue text-center font-semibold transition-all">
-                                Inscribirse Ahora
+                            <div class="bg-white/5 p-2 rounded border border-white/10">
+                                <span class="text-orange-400 font-bold text-xs block">4:00 PM</span>
+                                <span class="text-sm">🎮 Videojuegos Scratch</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto text-center">
+                            <div class="mb-3">
+                                <span class="text-gray-400 text-xs line-through">S/ 250</span>
+                                <span class="text-3xl font-bold text-yellow-400">S/ 150</span>
+                            </div>
+                            <a href="https://forms.gle/kWtwRb5QgAp53HDw6" target="_blank" class="block w-full py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-aiva-dark font-bold hover:scale-105 transition-transform">
+                                Matricular Niño
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="group bg-aiva-surface border border-white/10 rounded-2xl overflow-hidden hover:border-aiva-teal/50 transition-all duration-300 hover:shadow-2xl hover:shadow-aiva-teal/10 flex flex-col relative">
-                     <div class="absolute inset-0 border-2 border-yellow-400/50 rounded-2xl pointer-events-none"></div>
-
-                    <div class="h-48 bg-gradient-to-br from-indigo-900 to-purple-900 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-yellow-400/10 group-hover:bg-yellow-400/20 transition-colors"></div>
-                        <div class="absolute top-4 right-4 bg-yellow-400 text-aiva-dark text-xs font-extrabold px-3 py-1 rounded-full shadow-lg">
-                            📅 Inicio: 5 de Enero
-                        </div>
-                        <div class="absolute top-4 left-4 bg-white/10 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">
-                            Verano 2026
-                        </div>
-                        <div class="absolute inset-0 flex items-center justify-center text-6xl">🧒🚀</div>
-                    </div>
-                    
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold mb-1 text-white">Talleres de Verano AIVA</h3>
-                        <p class="text-yellow-400 text-sm font-semibold mb-4">¡Elige tu aventura favorita!</p>
-
-                        <div class="bg-white/5 rounded-lg p-3 mb-3 border border-white/5 hover:border-yellow-400/30 transition-colors">
-                            <div class="flex justify-between items-center mb-1">
-                                <h4 class="font-bold text-white">🎨 Cuentos Mágicos con IA</h4>
-                                <span class="text-xs bg-aiva-blue px-2 py-0.5 rounded text-white">3:00 PM</span>
-                            </div>
-                            <p class="text-xs text-gray-400">Crea historias, personajes y dibuja con Inteligencia Artificial.</p>
-                        </div>
-
-                        <div class="bg-white/5 rounded-lg p-3 mb-4 border border-white/5 hover:border-yellow-400/30 transition-colors">
-                            <div class="flex justify-between items-center mb-1">
-                                <h4 class="font-bold text-white">🎮 Videojuegos con Scratch</h4>
-                                <span class="text-xs bg-orange-600 px-2 py-0.5 rounded text-white">4:00 PM</span>
-                            </div>
-                            <p class="text-xs text-gray-400">Aprende lógica programando tus propios juegos desde cero.</p>
-                        </div>
-                        
-                        <div class="border-t border-white/10 pt-4 mt-auto">
-                            <div class="flex justify-between items-center mb-4">
-                                <div>
-                                    <span class="text-gray-400 text-xs block">Por taller mensual</span>
-                                    <span class="text-2xl font-bold text-yellow-400">S/ 150</span>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-gray-400 text-xs block line-through">S/ 250</span>
-                                    <span class="text-xs text-aiva-teal font-bold">¡Oferta Pre-Venta!</span>
-                                </div>
-                            </div>
-                            <a href="https://forms.gle/u4gRhrk9efmK5uHp6" target="_blank" class="block w-full py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-aiva-dark font-bold text-center transition-all shadow-lg shadow-yellow-400/20">
-                                Matricular
-                            </a>
-                        </div>
+                <div class="bg-gradient-to-b from-aiva-surface to-aiva-dark border border-aiva-teal/30 rounded-2xl overflow-hidden p-8 flex flex-col">
+                    <div class="mb-4 text-4xl">👨‍🏫</div>
+                    <h3 class="text-xl font-bold mb-2">Mentoría Premium</h3>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow">Acompañamiento semanal en vivo conmigo. Proyectos reales y certificación.</p>
+                    <div class="flex justify-between items-center border-t border-white/10 pt-4">
+                        <span class="text-sm text-aiva-teal">Cupos Limitados</span>
+                        <a href="https://wa.me/51952225123?text=Info%20Mentoria" target="_blank" class="px-4 py-2 bg-gradient-to-r from-aiva-blue to-aiva-teal rounded-lg text-sm font-bold transition-colors">Postular</a>
                     </div>
                 </div>
-
-                <div class="group bg-gradient-to-b from-aiva-surface to-aiva-dark border border-aiva-teal/30 rounded-2xl overflow-hidden hover:border-aiva-teal transition-all duration-300 relative flex flex-col">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-aiva-blue to-aiva-teal"></div>
-                    
-                    <div class="h-48 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-aiva-teal/10 transition-colors"></div>
-                        <div class="absolute top-4 left-4 bg-gradient-to-r from-aiva-blue to-aiva-teal text-white text-xs font-bold px-3 py-1 rounded-full">
-                            Premium
-                        </div>
-                        <div class="absolute inset-0 flex items-center justify-center text-6xl">👨‍🏫</div>
-                    </div>
-                    
-                    <div class="p-8 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold mb-2 text-white">Mentoría AIVA Pro</h3>
-                        <p class="text-gray-400 text-sm mb-6 flex-grow">
-                            La experiencia definitiva. Acceso a todos los cursos + <strong>acompañamiento semanal en vivo</strong>. Revisión de proyectos y certificación avanzada.
-                        </p>
-                        
-                        <div class="border-t border-white/10 pt-6 mt-auto">
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-gray-400 text-sm">Cupos Limitados</span>
-                                <span class="text-2xl font-bold text-aiva-teal">Consultar</span>
-                            </div>
-                            <a href="https://wa.me/51952225123?text=Hola%20Profesor,%20me%20interesa%20la%20Mentoria%20Premium" target="_blank" class="block w-full py-3 rounded-xl bg-gradient-to-r from-aiva-blue to-aiva-teal text-white font-bold text-center shadow-lg shadow-aiva-teal/20 hover:scale-105 transition-transform">
-                                Postular Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <section id="apps" class="py-24 bg-aiva-dark relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">
-                    Herramientas <span class="text-aiva-teal">Desarrolladas por AIVA</span>
+    <section id="recursos" class="py-24 bg-aiva-surface relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-10">
+            <div class="w-full md:w-1/2 text-left">
+                <span class="text-yellow-400 font-bold tracking-wide text-sm uppercase bg-yellow-400/10 px-3 py-1 rounded-full">Recurso Gratuito</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 mt-4">
+                    ¿Tu hijo quiere <br><span class="text-aiva-teal">crear historias?</span>
                 </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    No solo enseñamos tecnología, la creamos. Utiliza nuestras aplicaciones gratuitas para potenciar tu productividad y desarrollo.
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    Descarga gratis nuestra <strong>"Plantilla Mágica de Cuentos con IA"</strong>. Una actividad divertida y educativa para hacer en casa en solo 10 minutos.
                 </p>
+                <a href="regalo.pdf" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-aiva-dark font-bold hover:bg-gray-200 transition-colors shadow-lg shadow-white/10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Descargar Guía PDF
+                </a>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="group relative rounded-3xl bg-aiva-surface border border-white/10 hover:border-aiva-teal/50 transition-all duration-300 overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-aiva-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="p-8 relative z-10 flex flex-col h-full">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center text-2xl">📸</div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-white">WillySnap</h3>
-                                <span class="text-xs font-semibold text-aiva-teal bg-aiva-teal/10 px-2 py-1 rounded">Utilidad IA</span>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 mb-8 flex-grow">
-                            Herramienta inteligente de OCR. Sube cualquier imagen o captura de pantalla y extrae el texto editable al instante. Ideal para digitalizar apuntes o documentos.
-                        </p>
-                        <a href="https://talleresevaoficial.github.io/willysnap" target="_blank" class="w-full py-3 rounded-xl border border-white/20 hover:bg-white hover:text-aiva-dark font-semibold text-center transition-all">
-                            Probar WillySnap &rarr;
-                        </a>
-                    </div>
+            
+            <div class="w-full md:w-1/2 flex justify-center relative mt-10 md:mt-0">
+                <div class="absolute -top-10 right-10 md:right-20 bg-white text-aiva-dark px-6 py-3 rounded-2xl rounded-bl-none shadow-xl font-bold animate-pulse z-20 border-2 border-aiva-teal">
+                    ¡Hola, soy AIVOT! 🤖
                 </div>
-
-                <div class="group relative rounded-3xl bg-aiva-surface border border-white/10 hover:border-aiva-teal/50 transition-all duration-300 overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="p-8 relative z-10 flex flex-col h-full">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 bg-purple-600 rounded-xl flex items-center justify-center text-2xl">💻</div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-white">WillyWeb Editor Pro</h3>
-                                <span class="text-xs font-semibold text-purple-400 bg-purple-400/10 px-2 py-1 rounded">Desarrollo Web</span>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 mb-8 flex-grow">
-                            Tu propio entorno de desarrollo en el navegador. Escribe HTML, CSS y JS con vista previa en tiempo real y descarga tus proyectos en ZIP.
-                        </p>
-                        <a href="https://talleresevaoficial.github.io/WillyWeb-Editor-Pro" target="_blank" class="w-full py-3 rounded-xl border border-white/20 hover:bg-white hover:text-aiva-dark font-semibold text-center transition-all">
-                            Abrir Editor &rarr;
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="nosotros" class="py-24 bg-aiva-surface border-t border-white/5 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center gap-12">
                 
-                <div class="w-full md:w-1/2 relative z-10">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aiva-blue/10 text-aiva-teal text-xs font-semibold uppercase tracking-wide mb-6">
-                        Director Académico
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-6">
-                        Hola, soy <span class="text-aiva-teal">El Profe Willy</span>
-                    </h2>
-                    <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
-                        <p>
-                            Más que un instructor, soy un apasionado por conectar la educación con la tecnología real.
-                        </p>
-                        <p>
-                            Fundé <strong>AIVA Academy</strong> con una misión clara: que la Inteligencia Artificial deje de parecer "magia compleja" y se convierta en una herramienta útil para tus tareas, tu trabajo y tu creatividad.
-                        </p>
-                        <p>
-                            Como desarrollador de software (creador de <em>WillySnap</em> y <em>WillyWeb</em>) y docente activo, te garantizo una enseñanza práctica, segura y directa al grano.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-6 mt-10 border-t border-white/10 pt-8">
-                        <div>
-                            <span class="block text-3xl font-bold text-white">+5</span>
-                            <span class="text-sm text-gray-400">Años enseñando</span>
-                        </div>
-                        <div>
-                            <span class="block text-3xl font-bold text-white">+12</span>
-                            <span class="text-sm text-gray-400">Proyectos Web</span>
-                        </div>
-                        <div>
-                            <span class="block text-3xl font-bold text-white">100%</span>
-                            <span class="text-sm text-gray-400">Práctico</span>
-                        </div>
-                    </div>
+                <div class="relative w-72 h-72 bg-gradient-to-br from-aiva-blue/30 to-aiva-teal/10 rounded-full flex items-center justify-center animate-bounce-slow border border-white/10">
+                    <img src="robot.png" alt="AIVOT Robot AIVA" class="w-64 h-auto drop-shadow-[0_0_30px_rgba(0,198,251,0.6)] relative z-10 hover:scale-110 transition-transform duration-500">
                 </div>
-
-                <div class="w-full md:w-1/2 relative">
-                    <div class="absolute inset-0 bg-aiva-teal/20 blur-[100px] rounded-full"></div>
-                    
-                    <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-aiva-blue/20 bg-aiva-dark aspect-square flex items-center justify-center group">
-                        <div class="text-center p-10">
-                            <div class="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
-                                👨‍🏫
-                            </div>
-                            <p class="text-gray-500 text-sm">Aquí pondremos tu foto profesional</p>
-                            <p class="text-xs text-gray-600 mt-2">(Por ahora usamos este avatar)</p>
-                        </div>
-                        
-                        <div class="absolute inset-0 border-2 border-aiva-teal/0 group-hover:border-aiva-teal/50 transition-colors rounded-3xl"></div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <footer class="bg-aiva-dark border-t border-white/10 py-12 text-center">
-        <p class="text-gray-500 text-sm">© 2024 AIVA Academy. Todos los derechos reservados.</p>
+    <section id="nosotros" class="py-24 bg-aiva-dark text-center border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-8 text-5xl border border-white/10">👨‍🏫</div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Hola, soy el Profe Willy</h2>
+            <p class="text-gray-400 mb-10 text-lg max-w-2xl mx-auto">Director de AIVA y Desarrollador de Software. Mi misión es que uses la tecnología para crear, no solo para consumir.</p>
+            
+            <div class="flex justify-center gap-4 flex-wrap" id="apps">
+                <a href="https://talleresevaoficial.github.io/willysnap" target="_blank" class="px-8 py-3 rounded-full border border-white/10 hover:border-aiva-teal hover:bg-white/5 text-sm transition-all flex items-center gap-2">
+                    <span>📸</span> Probar WillySnap
+                </a>
+                <a href="https://talleresevaoficial.github.io/WillyWeb-Editor-Pro" target="_blank" class="px-8 py-3 rounded-full border border-white/10 hover:border-purple-400 hover:bg-white/5 text-sm transition-all flex items-center gap-2">
+                    <span>💻</span> Probar Editor Web
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-10 text-center text-gray-600 text-sm border-t border-white/10">
+        <p class="mb-2">© 2026 AIVA Academy. Tacna, Perú.</p>
+        <p>Innovación educativa para la nueva generación.</p>
     </footer>
 
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Cerrar al hacer clic en cualquier enlace
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+    
+    <style>
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(-3%); }
+            50% { transform: translateY(3%); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 4s infinite ease-in-out;
+        }
+    </style>
 </body>
 </html>
